@@ -1,9 +1,16 @@
 name: 'Issue Label Notifier'
 description: 'Notify individuals or teams based on issue labels.'
 inputs:
+  token:
+    description: 'The GitHub authentication token.'
+    required: true
   recipients:
     description: 'Mapping of label to notification recipients.'
     required: true
 runs:
   using: 'node12'
   main: 'index.js'
+
+branding:
+  icon: 'bell'  
+  color: 'gray-dark'
