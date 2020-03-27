@@ -1,0 +1,24 @@
+{
+  "name": "issue-label-notification-action",
+  "version": "1.0.0",
+  "description": "Notify individuals or teams based on issue labels.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenschelkopf/issue-label-notification-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenschelkopf/issue-label-notification-action/issues"
+  },
+  "homepage": "https://github.com/jenschelkopf/issue-label-notification-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  }
+}

@@ -1,0 +1,5 @@
+name: 'Issue Label Notifier'
+description: 'Notify individuals or teams based on issue labels.'
+runs:
+  using: 'node12'
+  main: 'index.js'
