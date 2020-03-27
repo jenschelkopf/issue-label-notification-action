@@ -1,5 +1,9 @@
 name: 'Issue Label Notifier'
 description: 'Notify individuals or teams based on issue labels.'
+inputs:
+  recipients:
+    description: 'Mapping of label to notification recipients.'
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'

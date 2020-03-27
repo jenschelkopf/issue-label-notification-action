@@ -9,3 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: jenschelkopf/issue-label-notification-action@master
+          with:
+             recipients: |
+                  help wanted=@jenschelkopf
+                  question=jenschelkopf
