@@ -1,8 +1,8 @@
 name: Notify users based on issue labels
 
 on:
-  label:
-    types: [created, edited]
+  issues:
+      types: [labeled]
 
 jobs:
   notify:
