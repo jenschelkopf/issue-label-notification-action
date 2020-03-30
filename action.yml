@@ -9,8 +9,8 @@ inputs:
     required: true
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
 
 branding:
-  icon: 'bell'  
+  icon: 'bell'
   color: 'gray-dark'
