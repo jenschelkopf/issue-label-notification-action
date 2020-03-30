@@ -9,7 +9,7 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 
 ### Inputs
 - `token`: The GitHub authentication token. This is required for the action to create issue comments.
-- `recipients`: A map of labels and which individuals or teams to notify. Multiple labels can configured by putting each on a newline. Multiple teams and/or individuals can be configured for each label by putting a space between them.
+- `recipients`: A map of labels and which individuals or teams to notify. Multiple labels can be configured by putting each on a newline. Multiple teams and/or individuals can be configured for each label by putting a space between them.
 
 ### Example workflow
 
