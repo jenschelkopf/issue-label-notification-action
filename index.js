@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const correctRecipients = require('./utils');
 
 async function run() {
   try {
@@ -18,11 +19,12 @@ async function run() {
     });
 
     if (match) {
+      const recipients = correctRecipients(match.split("=")[1]);
       const createCommentResponse = await octokit.issues.createComment({
         owner,
         repo,
         issue_number: issueNumber,
-        body: `Head's up ${match.split("=")[1]} - the '${label}' label was attached to this issue.`
+        body: `Head's up ${recipients} - the '${label}' label was attached to this issue.`
       });
     } else {
       console.log("No matching recipients found for label ${label}.");
