@@ -24,7 +24,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-        - uses: jenschelkopf/issue-label-notification-action@1.0
+        - uses: jenschelkopf/issue-label-notification-action@1.1
           with:
              token: ${{ secrets.GITHUB_TOKEN }}
              recipients: |
