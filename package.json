@@ -4,7 +4,8 @@
   "description": "Notify individuals or teams based on issue labels.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",
