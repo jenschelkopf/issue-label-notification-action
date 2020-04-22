@@ -3,4 +3,8 @@ function correctRecipients(recipients) {
   return recipients.replace(regex, '$1@$2');
 }
 
-module.exports = correctRecipients;
+function correctMessage(message, recipients, label) {
+  return message.replace('{recipients}', recipients).replace('{label}', label)
+}
+
+module.exports = correctRecipients, correctMessage;
