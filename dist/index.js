@@ -497,7 +497,7 @@ module.exports = require("os");
 
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
-const correctRecipients = __webpack_require__(278);
+const { correctRecipients, correctMessage } = __webpack_require__(278);
 
 async function run() {
   try {
@@ -515,20 +515,20 @@ async function run() {
       return labelRecipient.split("=")[0] === label;
     });
 
+    const message = core.getInput('message');
+
     if (match) {
       const recipients = correctRecipients(match.split("=")[1]);
+      const comment = correctMessage(message, recipients, label);
       const createCommentResponse = await octokit.issues.createComment({
         owner,
         repo,
         issue_number: issueNumber,
-        body: `Head's up ${recipients} - the '${label}' label was attached to this issue.`
+        body: comment
       });
     } else {
       console.log("No matching recipients found for label ${label}.");
     }
-
-
-
   } catch (error) {
     console.error(error);
     core.setFailed(`The issue-label-notification-action action failed with ${error}`);
@@ -2357,7 +2357,11 @@ function correctRecipients(recipients) {
   return recipients.replace(regex, '$1@$2');
 }
 
-module.exports = correctRecipients;
+function correctMessage(message, recipients, label) {
+  return message.replace('{recipients}', recipients).replace('{label}', label)
+}
+
+module.exports = { correctRecipients, correctMessage };
 
 
 /***/ }),
