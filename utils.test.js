@@ -34,11 +34,11 @@ test('adds missing ambersands', () => {
 });
 
 test('formats message when configuration is correct', () => {
-  const input = 'Heads up {recipients} - the "{label}" label was attached to this issue.';
+  const input = 'Heads up {recipients} - the "{label}" label was applied to this issue.';
   const recipients = '@docs-team @1234';
   const label = 'documentation';
 
-  const output = 'Heads up @docs-team @1234 - the "documentation" label was attached to this issue.';
+  const output = 'Heads up @docs-team @1234 - the "documentation" label was applied to this issue.';
 
   expect(correctMessage(input, recipients, label)).toBe(output);
 });
