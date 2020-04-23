@@ -32,9 +32,6 @@ async function run() {
     } else {
       console.log("No matching recipients found for label ${label}.");
     }
-
-
-
   } catch (error) {
     console.error(error);
     core.setFailed(`The issue-label-notification-action action failed with ${error}`);

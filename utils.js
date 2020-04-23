@@ -7,4 +7,4 @@ function correctMessage(message, recipients, label) {
   return message.replace('{recipients}', recipients).replace('{label}', label)
 }
 
-module.exports = correctRecipients, correctMessage;
+module.exports = { correctRecipients, correctMessage };
