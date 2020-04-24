@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const correctRecipients = require('./utils');
+const { correctRecipients, correctMessage } = require('./utils');
 
 async function run() {
   try {
@@ -18,20 +18,20 @@ async function run() {
       return labelRecipient.split("=")[0] === label;
     });
 
+    const message = core.getInput('message');
+
     if (match) {
       const recipients = correctRecipients(match.split("=")[1]);
+      const comment = correctMessage(message, recipients, label);
       const createCommentResponse = await octokit.issues.createComment({
         owner,
         repo,
         issue_number: issueNumber,
-        body: `Head's up ${recipients} - the '${label}' label was attached to this issue.`
+        body: comment
       });
     } else {
       console.log("No matching recipients found for label ${label}.");
     }
-
-
-
   } catch (error) {
     console.error(error);
     core.setFailed(`The issue-label-notification-action action failed with ${error}`);
