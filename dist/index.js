@@ -410,7 +410,7 @@ async function run() {
 
     // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
     const token = core.getInput('token');
-    const octokit = new github.GitHub(token);
+    const octokit = github.getOctokit(token);
 
     const labelRecipients = core.getInput('recipients').split("\n");
     const match = labelRecipients.find((labelRecipient) => {
