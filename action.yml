@@ -3,7 +3,8 @@ description: 'Notify individuals or teams based on issue labels.'
 inputs:
   token:
     description: 'The GitHub authentication token.'
-    required: true
+    required: false
+    default: ${{ github.token }}
   recipients:
     description: 'Mapping of label to notification recipients.'
     required: true
