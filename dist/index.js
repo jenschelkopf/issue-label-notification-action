@@ -403,7 +403,8 @@ const { correctRecipients, correctMessage } = __webpack_require__(278);
 
 async function run() {
   try {
-    const issueNumber = github.context.payload.issue.number;
+    const payload = github.context.payload;
+    const issueNumber = (payload.issue || payload.pull_request || payload).number;
     const owner = github.context.repo.owner;
     const repo = github.context.repo.repo;
     const label = github.context.payload.label.name;
