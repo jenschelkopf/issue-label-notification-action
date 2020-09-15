@@ -24,7 +24,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-        - uses: jenschelkopf/issue-label-notification-action@1.2
+        - uses: jenschelkopf/issue-label-notification-action@1.3
           with:
              recipients: |
                   help wanted=@jenschelkopf
