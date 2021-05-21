@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/jenschelkopf/issue-label-notification-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.7",
     "@actions/github": "^4.0.0",
     "@zeit/ncc": "^0.22.3"
   },
