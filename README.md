@@ -9,7 +9,7 @@ Create a workflow `.yml` file in your repositories `.github/workflows` directory
 
 ### Inputs
 - `recipients`: A map of labels and which individuals or teams to notify. Multiple labels can be configured by putting each on a newline. Multiple teams and/or individuals can be configured for each label by putting a space between them.
-- `message`: (Optional) The message to include in the comment. Must include at least `{receipients}` but can also include `{label}`. See the default message in the action.yml file.
+- `message`: (Optional) The message to include in the comment. Must include at least `{recipients}` but can also include `{label}`. See the default message in the action.yml file.
 
 ### Example workflow
 
